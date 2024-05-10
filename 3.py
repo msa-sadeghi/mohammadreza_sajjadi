@@ -1,25 +1,25 @@
-list1 = [1,2,3,4]
-print(list("abcd"))
-print(list1[0])
-print(list1[-1])
-print(list1[len(list1) - 1])
+# list1 = [1,2,3,4]
+# print(list("abcd"))
+# print(list1[0])
+# print(list1[-1])
+# print(list1[len(list1) - 1])
 
-for n in list1:
-    print(n, end=" ")
-print()
-for i in range(len(list1)):
-    print(list1[i], end=" ")
-list1 = [["a", "b"], ["c","d"]]
-print(list1[0][0])
-print(list1[0][1])
+# for n in list1:
+#     print(n, end=" ")
+# print()
+# for i in range(len(list1)):
+#     print(list1[i], end=" ")
+# list1 = [["a", "b"], ["c","d"]]
+# print(list1[0][0])
+# print(list1[0][1])
 
-print(list1[1][0])
-print(list1[1][1])
+# print(list1[1][0])
+# print(list1[1][1])
 
-for row in list1:
-    for col in row:
-        print(col, end=" ")
-    print()
+# for row in list1:
+#     for col in row:
+#         print(col, end=" ")
+#     print()
   
 # def A(n):
 #     result = []
@@ -59,3 +59,34 @@ def A(students_info):
         
 A(students_info)
 print("student info after something", students_info)
+
+
+
+
+def best_student(students_info):
+    sort_list(students_info)
+    max_score = students_info[0][-2]
+    all_averages = []
+    student_ave = 0
+    for i in range(len(students_info)):
+        all_averages.append(students_info[i][-1])
+        if students_info[i][-2] > max_score:
+            max_score = students_info[i][-2]
+            student_ave = students_info[i][-1]
+    
+    student_grade = all_averages.index(student_ave) + 1
+    return max_score, student_grade
+    
+def sort_list(students_info):
+    for i in range(len(students_info)):
+        for j in range(i+1,len(students_info)):
+            if students_info[i][-1] < students_info[j][-1]:
+                students_info[i], students_info[j] = students_info[j], students_info[i]
+    
+print(best_student(students_info))
+
+
+
+
+
+
