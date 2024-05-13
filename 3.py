@@ -44,46 +44,44 @@
 
 # print(B([[1,2], [2,4]]))
 
-students_info = []
-for i in range(3):
-    name = input("Enter student's name: ")
-    math = float(input("Enter student's math score: "))
-    computer = float(input("Enter student's computer score: "))
-    students_info.append([name, math, computer])
+# students_info = []
+# for i in range(3):
+#     name = input("Enter student's name: ")
+#     math = float(input("Enter student's math score: "))
+#     computer = float(input("Enter student's computer score: "))
+#     students_info.append([name, math, computer])
 
-print("student info before anything", students_info)   
-def A(students_info):
-    for i in range(len(students_info)):
-        m = (students_info[i][1] + students_info[i][2])/2
-        students_info[i].append(m)
+# print("student info before anything", students_info)   
+# def A(students_info):
+#     for i in range(len(students_info)):
+#         m = (students_info[i][1] + students_info[i][2])/2
+#         students_info[i].append(m)
         
-A(students_info)
-print("student info after something", students_info)
+# A(students_info)
+# print("student info after something", students_info)
 
 
 
 
-def best_student(students_info):
-    sort_list(students_info)
-    max_score = students_info[0][-2]
-    all_averages = []
-    student_ave = 0
-    for i in range(len(students_info)):
-        all_averages.append(students_info[i][-1])
-        if students_info[i][-2] > max_score:
-            max_score = students_info[i][-2]
-            student_ave = students_info[i][-1]
+# def best_student(students_info):
+#     sort_list(students_info)
+#     max_score = students_info[0][-2]
+#     index = 0
+#     for i in range(len(students_info)):
+#         if students_info[i][-2] > max_score:
+#             max_score = students_info[i][-2]
+#             index = i
     
-    student_grade = all_averages.index(student_ave) + 1
-    return max_score, student_grade
     
-def sort_list(students_info):
-    for i in range(len(students_info)):
-        for j in range(i+1,len(students_info)):
-            if students_info[i][-1] < students_info[j][-1]:
-                students_info[i], students_info[j] = students_info[j], students_info[i]
+#     return index + 1
     
-print(best_student(students_info))
+# def sort_list(students_info):
+#     for i in range(len(students_info)):
+#         for j in range(i+1,len(students_info)):
+#             if students_info[i][-1] < students_info[j][-1]:
+#                 students_info[i], students_info[j] = students_info[j], students_info[i]
+    
+# print(best_student(students_info))
 
 
 
