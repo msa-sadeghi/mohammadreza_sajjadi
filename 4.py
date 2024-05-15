@@ -34,24 +34,64 @@
 # x = int(input("enter a number: "))
 # print(is_prime_number(x))
 
-all_names = []
-counts = {}
-for i in range(3):
-    name = input("enter a name: ")
-    all_names.append(name)
+# f = {}
+# for i in range(3):
+#     name = input("enter a name: ")
+#     sport = input("enter a sport: ")
+#     f[name] = sport
 
-for name in all_names:
-    counts[name]     = all_names.count(name)
+# print(f['a'])
+
+# name_count = {}
+# for i in range(5):
+#     name = input("enter a name: ")
+#     if name not in name_count:
+#         name_count[name] = 1
+#     else:
+#         name_count[name] += 1
+# print(name_count)
+
+
+# def find_max(info)    :
+#     keys = list(info.keys())
+#     res = keys[0]
+#     m = info[res]
+#     for item in info.items():
+#         if item[1] > m:
+#             m = item[1]
+#             res = item[0]
+#     return res 
+# print(find_max(name_count))
+
+
+
+# persons = {
+#     "ali":2,
+#     "roze":1,
+#     "martin":5,
+#     "sara":3,
+#     "mina":2,
+# }
+
+# for i, j in persons.items():
+#     print(i,j)
+
+# all_trans = [100, -50, 300, -200]
+all_trans = []
+while True:
+    t = float(input("enter transaction amount: "))
+    all_trans.append(t)
+    if input("> if you want to quit enter 0 ") == "0":
+        break
     
-print(all_names)
-print(counts)
 
-max_name = list(counts.keys())[0]
-max_count = counts.get(max_name)
-print(max_count)
-for item in counts.items():
-    if item[1] > max_count:
-        max_count = item[1]
-        max_name = item[0]
-        
-print(max_name)
+total = 0
+max_total = 0
+def func(x):
+    global total, max_total
+    for n in x :
+            total += n
+            if total > max_total:
+                max_total = total
+    return max_total
+print(func(all_trans))
